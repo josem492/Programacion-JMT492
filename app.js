@@ -1,29 +1,33 @@
-// Array para almacenar los nombres de los amigos
+
+// paso 1: variable Array para almacenar los nombres de los amigos
 let amigos = [];
-// Función para agregar un amigo a la lista
+
+// paso 2: Función para agregar un amigo a la lista
 function agregarAmigo() {
+
   // Capturar el valor del input
   let input = document.getElementById("amigo");
   let nombre = input.value.trim();
 
-  // Validar la entrada
+  // Validar la entrada y mostrar alerta si esta vacio
   if (nombre === "") {
     alert("Por favor, inserte un nombre.");
     return;
   }
 
-  // Agregar al array
+  // actualizar el array si el valor es válido
   amigos.push(nombre);
 
   // Limpiar el campo de entrada
   input.value = "";
-  // Dentro de agregarAmigo(), al final
+  // Dentro de la funcion agregarAmigo(), al final
 mostrarLista();
 }
 
-// Función para mostrar la lista de amigos en pantalla
+// paso 3: Función para mostrar la lista de amigos en pantalla
 function mostrarLista() {
-  // Obtener el elemento <ul> donde se mostrarán los amigos
+
+  // Obtener el elemento de la lista donde se mostrarán los amigos
   let lista = document.getElementById("listaAmigos");
 
   // Limpiar la lista existente
@@ -37,9 +41,9 @@ function mostrarLista() {
   }
 }
 
-
-// Función para sortear un amigo secreto
+// paso 4: Función para sortear un amigo secreto
 function sortearAmigo() {
+
   // 1. Validar que haya amigos en la lista
   if (amigos.length === 0) {
     alert("No hay amigos en la lista para sortear.");
@@ -56,5 +60,3 @@ function sortearAmigo() {
   let resultado = document.getElementById("resultado");
   resultado.innerHTML = " El amigo secreto es: " + amigoSorteado;
 }
-
-
